@@ -64,7 +64,7 @@ case $1 in
         ;;
     chipyard-spiflash)
         make -C $LOCAL_CHIPYARD_DIR/tests
-        make -C $LOCAL_SIM_DIR ${mapping[$1]} BINARY=$LOCAL_CHIPYARD_DIR/tests/spiflash.riscv EXTRA_SIM_ARGS="+spiflash0=${LOCAL_CHIPYARD_DIR}/tests/spiflash.img" run-binary
+        make -C $LOCAL_SIM_DIR ${mapping[$1]} BINARY=$LOCAL_CHIPYARD_DIR/tests/spiflash.riscv SIM_FLAGS="+spiflash0=${LOCAL_CHIPYARD_DIR}/tests/spiflash.img" run-binary
         ;;
     tracegen)
         run_tracegen ${mapping[$1]}
